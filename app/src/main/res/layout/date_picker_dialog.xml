@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="datePickerViewModel"
+            type="com.aeternity.aecan.viewModels.DatePickerDialogViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTitleInputNumberModal"
+                style="@style/monserratBold.18.Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="15dp"
+                android:text="@{datePickerViewModel.title}"
+                android:textAlignment="center"
+                tools:text="Title" />
+
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/buttonTextInputNumberModal"
+                style="@style/buttonLightBlueModal"
+                android:layout_gravity="center"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:onClick="@{()->datePickerViewModel.onButtonPressed()}"
+                android:paddingLeft="@dimen/padding_50"
+                android:paddingRight="@dimen/padding_50"
+                android:text="@{datePickerViewModel.buttonText}"
+                tools:text="button Text" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/networkOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightGraySemiTransparent"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:indeterminate="true" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

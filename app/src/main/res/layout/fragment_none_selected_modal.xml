@@ -1,0 +1,38 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/monserratBold.18.Blue"
+            android:id="@+id/textViewAssociatedBeacon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:text="@string/associated_beacon" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyvlerViewAssociatedBeacon"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_282"
+            tools:listitem="@layout/item_modal_select_view" />
+
+        <Button
+            android:id="@+id/buttonAssociatedBeacon"
+            style="@style/buttonLightBlueModal"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_22"
+            android:layout_marginBottom="@dimen/margin_27"
+            android:text="@string/accept" />
+
+    </LinearLayout>
+</layout>

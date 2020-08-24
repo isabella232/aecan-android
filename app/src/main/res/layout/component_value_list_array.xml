@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="valueListArrayFragment"
+            type="com.aeternity.aecan.views.fragments.components.ValueListArrayFragment" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginBottom="11dp"
+        android:elevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50">
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/monserratRegular.16.PrimaryDarkColor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12"
+                    android:text="@{valueListArrayFragment.title}"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonShowAll"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonShowAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    app:layout_constraintTop_toTopOf="@+id/buttonShowAll"
+                    tools:text="Ubicación en el invernadero" />
+
+                <ToggleButton
+                    android:id="@+id/buttonShowAll"
+                    style="@style/toggleButtonList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:checked="true"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:elevation="0dp"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginEnd="-5dp"
+                    android:gravity="center"
+                    android:onClick="@{(v)->valueListArrayFragment.buttonShowMorePressed(v)}"
+                    android:paddingRight="@dimen/padding_15"
+                    android:text="@string/show_all_list"
+                    android:textOff="@string/show_less_list"
+                    android:textOn="@string/show_all_list"
+                    tools:visibility="visible"
+                    android:visibility="@{valueListArrayFragment.hasMoreItemsThanMinimum ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:listitem="@layout/component_key_value_array" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="9dp"
+            android:foregroundGravity="center"
+            android:onClick="@{()->valueListArrayFragment.buttonAddPressed()}"
+            android:src="@drawable/ic_add"
+            android:visibility="@{valueListArrayFragment.editable ? View.VISIBLE : View.GONE}"
+            app:fabCustomSize="24dp" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingButton2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="9dp"
+            android:foregroundGravity="center"
+            android:onClick="@{()->valueListArrayFragment.buttonMinusPressed()}"
+            android:src="@drawable/ic_remove"
+            android:visibility="@{valueListArrayFragment.editable ? View.VISIBLE : View.GONE}"
+            app:fabCustomSize="24dp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

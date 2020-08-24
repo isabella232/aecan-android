@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selectModalViewModel"
+            type="com.aeternity.aecan.viewModels.SelectModalViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blackOpacity30"
+            android:onClick="@{()->selectModalViewModel.onDismiss()}" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintHeight_max="420dp"
+            app:layout_constraintHeight_min="100dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:maxHeight="420dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/textViewModalTitle"
+                style="@style/monserratBold.18.Blue"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_18"
+                android:text="@{selectModalViewModel.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/select_beacons" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scrollbars="vertical"
+                app:layout_constrainedHeight="true"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                app:layout_constraintBottom_toTopOf="@id/buttonModalSelect"
+                app:layout_constraintTop_toBottomOf="@+id/textViewModalTitle"
+                tools:listitem="@layout/item_modal_select_view" />
+
+            <Button
+                android:id="@+id/buttonModalSelect"
+                style="@style/buttonLightBlueModal"
+                android:layout_marginTop="@dimen/margin_22"
+                android:layout_marginBottom="@dimen/margin_27"
+                android:onClick="@{()->selectModalViewModel.onButtonPressed()}"
+                android:paddingLeft="@dimen/padding_60"
+                android:paddingRight="@dimen/padding_60"
+                android:text="@{selectModalViewModel.buttonText}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/add" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

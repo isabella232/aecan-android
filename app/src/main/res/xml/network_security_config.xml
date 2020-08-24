@@ -1,0 +1,8 @@
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">dev.aecan.vortexsoftware.com.ar</domain>
+        <domain includeSubdomains="true"> aecan.inmindsoftware.com</domain>
+
+    </domain-config>
+
+</network-security-config>

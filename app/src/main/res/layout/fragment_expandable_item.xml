@@ -1,0 +1,43 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginBottom="11dp"
+        android:baselineAligned="false"
+        android:elevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_22"
+            android:layout_marginEnd="@dimen/margin_22"
+            android:orientation="vertical"
+            tools:context="com.aeternity.aecan.views.fragments.components.ExpandableItemFragment">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/textView18MonserratLightGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_18"
+                android:text="@string/phytosanitary_treatments" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerExpandableItems"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_weight="1"
+                tools:listitem="@layout/item_expandable" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

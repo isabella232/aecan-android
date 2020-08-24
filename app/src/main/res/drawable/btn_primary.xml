@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_window_focused="false" android:state_enabled="true"
+        android:drawable="@drawable/btn_primary_color_normal" />
+    <item android:state_window_focused="false" android:state_enabled="false"
+        android:drawable="@drawable/btn_disable" />
+    <item android:state_pressed="true"
+        android:drawable="@drawable/btn_primary_dark_pressed" />
+    <item android:state_focused="true" android:state_enabled="true"
+        android:drawable="@drawable/btn_primary_dark_pressed" />
+    <item android:state_enabled="true"
+        android:drawable="@drawable/btn_primary_color_normal" />
+    <item android:state_focused="true"
+        android:drawable="@drawable/btn_disable" />
+    <item
+         android:drawable="@drawable/btn_disable" />
+
+    <item android:drawable="@drawable/text_view_primary_color"/>
+
+    <item android:drawable="@drawable/btn_primary_ligth_color"/>
+</selector>

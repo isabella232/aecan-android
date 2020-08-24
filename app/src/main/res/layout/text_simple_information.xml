@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="text"
+            type="String" />
+</data>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/textViewSimpleInformation"
+        style="@style/monserratRegular.16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:alpha="0.75"
+        android:textColor="@color/darkGray"
+        android:layout_marginBottom="@dimen/margin_5"
+        app:textSimpleInformation="@{text}"
+        tools:text="@string/select_variety" />
+</layout>

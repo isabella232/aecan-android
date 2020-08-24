@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="newLotDetailViewModel"
+            type="com.aeternity.aecan.viewModels.NewLotDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.aeternity.aecan.views.NewLotDetailActivity">
+
+        <FrameLayout
+            android:id="@+id/containerHeaderNewLotDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_22"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_22"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:background="@color/backgroundTranslucent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context="com.aeternity.aecan.views.fragments.HeaderNewLotDetailFragment">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/containerStagesDetail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_5"
+            app:layout_constraintBottom_toTopOf="@+id/showAnalisys"
+            app:layout_constraintTop_toBottomOf="@+id/containerHeaderNewLotDetail" />
+
+        <LinearLayout
+            android:id="@+id/showAnalisys"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_marginTop="@dimen/margin_14"
+            android:layout_marginRight="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:background="@drawable/btn_blue"
+            android:gravity="center"
+            android:onClick="@{(v) ->newLotDetailViewModel.onButtonLaboratoryPressed()}"
+            android:visibility="@{newLotDetailViewModel.hasPdf?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAeternityLink">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/margin_9"
+                android:src="@drawable/ic_attach"
+                android:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textCreateLot"
+                style="@style/textWhite18MonserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/show_laboratory_analysis" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonAeternityLink"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_marginTop="@dimen/margin_14"
+            android:layout_marginRight="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:background="@drawable/btn_border_gray"
+            android:gravity="center"
+            android:onClick="@{(v) ->newLotDetailViewModel.onButtonAeternityLinkPressed()}"
+            android:visibility="@{newLotDetailViewModel.lot.isAeternityLinkNotNullOrEmpty?View.VISIBLE:View.GONE}"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/margin_9"
+                android:src="@drawable/logo_aeternity_link" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="keyValueItem"
+            type="com.aeternity.aecan.models.dynamic.DynamicItem" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/monserratRegular.16"
+            formatterFirstArgument="@{keyValueItem.name}"
+            formatterSecondArgument="@{keyValueItem.value}"
+            setFormatterTwoArgs="@{@string/keyValueFormatter}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/keyValueFormatter" />
+
+
+    </LinearLayout>
+</layout>

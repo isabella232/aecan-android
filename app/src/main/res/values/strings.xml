@@ -1,0 +1,199 @@
+<resources>
+    <string name="login_register">Registrate</string>
+    <string name="login_button">Ingresar</string>
+    <string name="login_text_do_not_have_account">¿No tenés una cuenta?</string>
+    <string name="register_text">Registro</string>
+    <string name="name">Nombre</string>
+    <string name="lastname">Apellido</string>
+    <string name="phone">Telefono</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password_text">¿Olvidaste la contraseña?</string>
+    <string name="recover_password">Recuperar Contraseña</string>
+    <string name="register">Registrarse</string>
+    <string name="forgot_button">Recuperar</string>
+    <string name="password">Contraseña</string>
+    <string name="repeat_password">Repita la contraseña</string>
+    <string name="email">Email</string>
+
+    <string name="base_url">http://dev.aecan.vortexsoftware.com.ar</string>
+    <string name="login_email_invalid_field">Por favor ingrese su Email</string>
+    <string name="register_name_invalid_field">Por favor ingrese su Nombre</string>
+    <string name="register_last_name_invalid_field">Por favor ingrese su Apellido</string>
+    <string name="register_phone_invalid_field">Por favor ingrese su Telefono</string>
+    <string name="login_password_invalid_field">Por favor ingresa su contraseña</string>
+    <string name="login_password_not_equals">Las contraseñas no coinciden</string>
+    <string name="search">Búsqueda</string>
+    <string name="lots">Lotes</string>
+    <string name="logo_description">logo aecan</string>
+    <string name="scan_qr_code">Escanear código QR</string>
+    <string name="hint_search_lot">Ingrese el número de lote</string>
+    <string name="login__email_invalid_field">Por favor ingrese su Email</string>
+    <string name="number_lot">Lote Número</string>
+    <string name="enter_number">Ingresar numero</string>
+    <string name="select_variety">Seleccionar variedad</string>
+    <string name="cw">CW</string>
+    <string name="add">Agregar</string>
+    <string name="select_beacon">Seleccionar items</string>
+    <string name="modal_number_lot">Ingresar numero de lote</string>
+    <string name="associated_beacon">Beacons asociados</string>
+    <string name="accept">Aceptar</string>
+    <string name="recovery_password">Recuperación de contraseña</string>
+    <string name="ok">OK</string>
+    <string name="stage_flowering">Floración</string>
+    <string name="actual_state">Estado actual</string>
+    <string name="new_lot">Nuevo Lote</string>
+    <string name="save">Guardar</string>
+    <string name="select_beacons">Seleccionar items</string>
+    <string name="select_a_beacon_to_continue">Seleccione un Beacon para continuar</string>
+    <string name="enter_a_number_to_continue">Ingrese un número de lote para continuar</string>
+    <string name="select_a_variety_to_continue">Seleccione una variedad para continuar</string>
+    <string name="created_lot_successfully">Lote creado exitosamente!</string>
+    <string name="error_has_ocurred">Ha ocurrido un error</string>
+    <string name="items">Beacons</string>
+    <string name="variety">Variedad</string>
+    <string name="hashtag">#</string>
+    <string name="information">Información</string>
+    <string name="search_tab">Búsqueda</string>
+    <string name="lots_tab">Lotes</string>
+    <string name="attach_icon_description">Icono que muestra si hay adjuntos</string>
+    <string name="description_button">Botón continuar</string>
+    <string name="start_date">Inicio: %s</string>
+    <string name="end_date">Fin: %s</string>
+    <string name="weight">%s kg</string>
+    <string name="id_with_prefix">#%s</string>
+    <string name="terms_and_conditions"><![CDATA[
+       <h1>Terms and Conditions for AECan</h1>
+    <h2>Introduction</h2>
+    <p>These Website Standard Terms and Conditions written on this webpage shall manage your use of
+        our website, sample accessible at sample.
+    </p>
+    <p>These Terms will be applied fully and affect to your use of this Website. By using this
+        Website, you agreed to accept all terms and conditions written in here. You must not use
+        this Website if you disagree with any of these Website Standard Terms and Conditions. These
+        Terms and Conditions have been generated with the help of the <a href="https://www.termsandcondiitionssample.com">
+            Terms And Conditions Template
+        </a> and the <a href="https://www.terms-conditions-generator.com">Terms and Conditions
+            Generator</a>.
+    </p>
+    <p>Minors or people below 18 years old are not allowed to use this Website.</p>
+    <h2>Intellectual Property Rights</h2>
+    <p>Other than the content you own, under these Terms, AECan and/or its licensors own all
+        the intellectual property rights and materials contained in this Website.
+    </p>
+    <p>You are granted limited license only for purposes of viewing the material contained on this
+        Website.
+    </p>
+    <h2>Restrictions</h2>
+    <p>You are specifically restricted from all of the following:</p>
+    <ul>
+        <li>publishing any Website material in any other media;</li>
+        <li>selling, sublicensing and/or otherwise commercializing any Website material;</li>
+        <li>publicly performing and/or showing any Website material;</li>
+        <li>using this Website in any way that is or may be damaging to this Website;</li>
+        <li>using this Website in any way that impacts user access to this Website;</li>
+        <li>using this Website contrary to applicable laws and regulations, or in any way may cause
+            harm to the Website, or to any person or business entity;
+        </li>
+        <li>engaging in any data mining, data harvesting, data extracting or any other similar
+            activity in relation to this Website;
+        </li>
+        <li>using this Website to engage in any advertising or marketing.</li>
+    </ul>
+    <p>Certain areas of this Website are restricted from being access by you and AECan may
+        further restrict access by you to any areas of this Website, at any time, in absolute
+        discretion. Any user ID and password you may have for this Website are confidential and you
+        must maintain confidentiality as well.
+    </p>
+    <h2>Your Content</h2>
+    <p>In these Website Standard Terms and Conditions, "Your Content" shall mean any audio, video
+        text, images or other material you choose to display on this Website. By displaying Your
+        Content, you grant AECan a non-exclusive, worldwide irrevocable, sub licensable
+        license to use, reproduce, adapt, publish, translate and distribute it in any and all media.
+    </p>
+    <p>Your Content must be your own and must not be invading any third-party’s rights. AECan
+        reserves the right to remove any of Your Content from this Website at any time without
+        notice.
+    </p>
+    <h2>Your Privacy</h2>
+    <p>Please read Privacy Policy.</p>
+    <h2>No warranties</h2>
+    <p>This Website is provided "as is," with all faults, and AECan express no representations
+        or warranties, of any kind related to this Website or the materials contained on this
+        Website. Also, nothing contained on this Website shall be interpreted as advising you.
+    </p>
+    <h2>Limitation of liability</h2>
+    <p>In no event shall AECan, nor any of its officers, directors and employees, shall be
+        held liable for anything arising out of or in any way connected with your use of this
+        Website whether such liability is under contract. AECan, including its officers,
+        directors and employees shall not be held liable for any indirect, consequential or special
+        liability arising out of or in any way related to your use of this Website.
+    </p>
+    <h2>Indemnification</h2>
+    <p>You hereby indemnify to the fullest extent AECan from and against any and/or all
+        liabilities, costs, demands, causes of action, damages and expenses arising in any way
+        related to your breach of any of the provisions of these Terms.
+    </p>
+    <h2>Severability</h2>
+    <p>If any provision of these Terms is found to be invalid under any applicable law, such
+        provisions shall be deleted without affecting the remaining provisions herein.
+    </p>
+    <h2>Variation of Terms</h2>
+    <p>AECan is permitted to revise these Terms at any time as it sees fit, and by using this
+        Website you are expected to review these Terms on a regular basis.
+    </p>
+    <h2>Assignment</h2>
+    <p>The AECan is allowed to assign, transfer, and subcontract its rights and/or obligations
+        under these Terms without any notification. However, you are not allowed to assign,
+        transfer, or subcontract any of your rights and/or obligations under these Terms.
+    </p>
+    <h2>Entire Agreement</h2>
+    <p>These Terms constitute the entire agreement between AECan and you in relation to your
+        use of this Website, and supersede all prior agreements and understandings.
+    </p>
+    <h2>Governing Law and Jurisdiction</h2>
+    <p>These Terms will be governed by and interpreted in accordance with the laws of the State of
+        ar, and you submit to the non-exclusive jurisdiction of the state and federal courts located
+        in ar for the resolution of any disputes.
+    </p>
+ ]]></string>
+    <string name="terms_and_conditions_title">Terminos y condiciones</string>
+    <string name="search_title">Búsqueda</string>
+    <string name="in_process">En curso</string>
+    <string name="finish">Finalizados</string>
+    <string name="start">Inicio:</string>
+    <string name="end">Fin:</string>
+    <string name="stage">Etapa:</string>
+    <string name="create_new_lote">Crear nuevo lote</string>
+    <string name="lot_detail">Detalle del lote</string>
+    <string name="stages">Etapas</string>
+    <string name="alert_end_stage">No puedes finalizar la etapa de Floración del lote #123456 porque  no has completado todas las tareas.</string>
+    <string name="alert_end_stage2">Todas las tareas están completadas.  ¿Deseas finalizar la etapa de  Floración del lote #123456?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="flowering_title">Floración</string>
+    <string name="logout_button">Salir</string>
+    <string name="numeral">#</string>
+    <string name="keyValueFormatter"><![CDATA[<font color="#888888">%s</font> <font color="#4F4F4F">%s</font>]]></string>
+    <string name="end_stage">Finalizar etapa</string>
+    <string name="ended_stage">Etapa Finalizada</string>
+    <string name="show_laboratory_analysis">Ver análisis del laboratorio</string>
+    <string name="show_all_list">Mostrar todas</string>
+    <string name="show_less_list">Mostrar menos</string>
+    <string name="void_string" />
+    <string name="list_of_lots">Listado de lotes</string>
+    <string name="start_treatment">Iniciar tratamiento</string>
+    <string name="phytosanitary_treatments">Tratamientos fitosanitarios</string>
+    <string-array name="items">
+        <item>Principio Activo</item>
+        <item>Nombre Comercial</item>
+        <item>Realizado</item>
+        <item>Organismo a controlar</item>
+    </string-array>
+    <string name="selectChartData">Seleccione un período</string>
+    <string name="no_data_avaiable">No existen datos actualmente</string>
+    <string name="no_lots_avaliable">No hay lotes disponibles</string>
+    <string name="without_elements">No existen elementos activos</string>
+    <string name="input_not_valid">Debe ingresar un valor</string>
+
+
+</resources>

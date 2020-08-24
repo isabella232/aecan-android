@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="expandableItem"
+            type="com.aeternity.aecan.models.ExpandableItem" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerExpandableTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_18"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/imageViewGreenCheck"
+                setSrcDrawable="@{expandableItem.pointResource}"
+                android:layout_width="@dimen/size_24"
+                android:layout_height="@dimen/size_24"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_gray_cancel" />
+
+            <TextView
+                style="@style/monserratRegular.16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:text="@{expandableItem.title}"
+                app:layout_constraintEnd_toStartOf="@id/arrowUp"
+                app:layout_constraintStart_toEndOf="@+id/imageViewGreenCheck"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textViewColor="@{expandableItem.textColorResource}"
+                tools:text="Tratamiento preventivo para enfermedades" />
+
+            <ImageView
+                android:id="@+id/arrowUp"
+                imageTinte="@{expandableItem.arrowColorResource}"
+                setSrcDrawable="@{expandableItem.rowDirection}"
+                android:layout_width="@dimen/size_16"
+                android:layout_height="@dimen/size_16"
+                android:layout_marginTop="@dimen/margin_4"
+                android:src="@drawable/ic_abovearrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSubtitleExpandable"
+            style="@style/monserratRegular.16.lightGray8888"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_13"
+            android:layout_marginEnd="@dimen/margin_15"
+            app:shorOrHideView="@{expandableItem.stateSubtitle}"
+            tools:listitem="@layout/text_simple_information" />
+
+        <TextView
+            style="@style/monserratRegular.14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:text="@{expandableItem.dates}"
+            android:textColor="@color/colorPrimary"
+            app:shorOrHideView="@{expandableItem.showButton}"
+            tools:text="Realizar entre: 25/06/2019 - 15/07/2019" />
+
+        <Button
+            android:id="@+id/buttonExpandableItem"
+            style="@style/buttonLightBlueModal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_35"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:text="@{expandableItem.buttonText}"
+            android:textSize="@dimen/text_14"
+            app:shorOrHideView="@{expandableItem.showButton}"
+            tools:text="Iniciar tratamiento" />
+
+    </LinearLayout>
+</layout>

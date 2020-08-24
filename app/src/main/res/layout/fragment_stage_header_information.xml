@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="headerStageInformationViewModel"
+            type="com.aeternity.aecan.viewModels.HeaderStageInformationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_22"
+        android:layout_marginEnd="@dimen/margin_22"
+        android:background="@color/backgroundTranslucent"
+        tools:context="com.aeternity.aecan.views.fragments.HeaderStageInformationFragment">
+
+        <TextView
+            android:id="@+id/textViewStringNumberLot"
+            style="@style/monserratRegular.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_17"
+            android:text="@string/number_lot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/monserratBold.21.primaryColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_16"
+            app:formatterArgument="@{headerStageInformationViewModel.lot.identifier}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStringNumberLot"
+            app:setFormatter="@{@string/id_with_prefix}"
+            tools:text="#1234567 " />
+
+        <LinearLayout
+            android:id="@+id/lytLoteInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shorOrHideView="@{headerStageInformationViewModel.finished}"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@+id/textViewEndStage"
+                style="@style/monserratRegular.16.PrimaryColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_17"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:text="@string/ended_stage" />
+
+            <TextView
+                style="@style/monserratRegular.14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_25"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:text="@{headerStageInformationViewModel.endDate}"
+                tools:text="21/07/2019" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/size_116"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            shorOrHideView="@{headerStageInformationViewModel.buttonBeaconsVisible }"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{()->headerStageInformationViewModel.selectBeacons()}"
+            android:padding="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnFinalizarEtapa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/btnFinalizarEtapa"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                style="@style/monserratRegular.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_4"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:gravity="center_horizontal"
+                android:text="@string/items"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/size_16"
+                android:layout_height="@dimen/size_16"
+                android:tint="@color/colorPrimaryDark"
+                android:src="@drawable/ic_dark_right_arrow" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFinalizarEtapa"
+            style="@style/buttonLightGreenMonserratRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginEnd="@dimen/margin_19"
+            android:onClick="@{()->headerStageInformationViewModel.onFinishStagePressed()}"
+            android:paddingStart="@dimen/margin_19"
+            android:paddingEnd="@dimen/margin_19"
+            android:text="@string/end_stage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:shorOrHideView="@{headerStageInformationViewModel.showFinishStageButton()}"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="btnFinalizarEtapa,lytLoteInfo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

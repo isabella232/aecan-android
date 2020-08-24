@@ -1,0 +1,85 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Run debug"
+  lane :distribute_operator_dev do
+	gradle(task: 'assemble', build_type: 'operatorDev')
+ 	firebase_app_distribution(
+              app: "1:310577484262:android:d5e267ad34ee46dc750627",
+              release_notes: "test for auto deploy",
+          )
+  end
+  lane :distribute_operator_staging do
+	gradle(task: 'assemble', build_type: 'operatorStaging')
+ 	firebase_app_distribution(
+              app: "1:310577484262:android:edc98324608d6b0f750627",
+              release_notes: "operatorStaging",
+          )
+  end
+ lane :distribute_operator_production do
+	gradle(task: 'assemble', build_type: 'operatorProduction')
+ 	firebase_app_distribution(
+              app: "1:310577484262:android:a4335a6c0a5d7dbe750627",
+              release_notes: "operatorProduction",
+          )
+  end
+
+  lane :distribute_user_dev do
+	gradle(task: 'assemble', build_type: 'userDev')
+ 	firebase_app_distribution(
+              app: "1:310577484262:android:41d7dc99bfe14d48750627",
+              release_notes: "test for user dev auto deploy",
+          )
+  end
+
+  lane :distribute_user_staging do
+	gradle(task: 'assemble', build_type: 'userStaging')
+ 	firebase_app_distribution(
+              app: "1:310577484262:android:2e64f90052699532750627",
+              release_notes: "userStaging",
+          )
+  end
+
+  lane :distribute_user_production do
+	gradle(task: 'assemble', build_type: 'userProduction')
+ 	firebase_app_distribution(
+              app: "1:310577484262:android:2e64f90052699532750627",
+              release_notes: "userProduction",
+          )
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+end

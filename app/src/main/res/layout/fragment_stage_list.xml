@@ -1,0 +1,35 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.aeternity.aecan.views.fragments.StageListFragment">
+
+        <TextView
+            style="@style/textView18MonserratBoldDarkGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginTop="@dimen/margin_5"
+            android:text="@string/stages" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_25"
+            android:layout_marginTop="@dimen/margin_14"
+            android:layout_marginEnd="@dimen/margin_25"
+            android:background="@color/lightGrayE0E0E0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewStage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="@dimen/margin_20"
+            tools:listitem="@layout/stage_view" />
+
+    </LinearLayout>
+</layout>

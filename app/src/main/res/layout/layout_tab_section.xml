@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewBadge"
+            style="@style/textViewCircleLightBlue8"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginRight="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginBottom="@dimen/margin_4"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/textViewTabTitle"
+            style="@style/monserratBold.13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informacion"
+            android:textColor="@color/lighterGray" />
+    </LinearLayout>
+</layout>

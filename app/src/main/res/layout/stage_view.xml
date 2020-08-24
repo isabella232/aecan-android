@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="stage"
+            type="com.aeternity.aecan.models.Stage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            invisibleLast="@{stage.position()}"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/lighterGray"
+            android:scaleY="1.2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/circleStage"
+            app:layout_constraintStart_toStartOf="@id/circleStage"
+            app:layout_constraintTop_toBottomOf="@id/circleStage"
+            app:layout_constraintVertical_bias="0.387" />
+
+        <View
+            invisibleFirst="@{stage.position()}"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/lighterGray"
+            android:scaleY="1.2"
+            app:layout_constraintBottom_toTopOf="@id/circleStage"
+            app:layout_constraintEnd_toEndOf="@id/circleStage"
+            app:layout_constraintStart_toStartOf="@id/circleStage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.387" />
+
+        <View
+            android:id="@+id/circleStage"
+            setBackgroundDrawable="@{stage.pointResource}"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="@dimen/margin_27"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayaoutStage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayaoutStage" />
+
+        <LinearLayout
+            android:id="@+id/linearLayaoutStage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_54"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_26"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewStageName"
+                style="@style/primaryLightTextView"
+                setTextColor="@{stage.textColor}"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="@{stage.name}"
+                tools:text="Acondicionamientooo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViewStage"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:gravity="center"
+                    android:text="@string/actual_state"
+                    android:visibility="@{stage.isActive ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    style="@style/monserratRegular.14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:gravity="center"
+                    android:visibility="@{stage.isActive || stage.endDate==null ? View.GONE : View.VISIBLE}"
+                    app:formatterArgument="@{stage.parsedEndDate()}"
+                    app:setFormatter="@{@string/end_date}"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="@dimen/size_16"
+                    android:layout_gravity="center"
+                    android:tint="@color/colorPrimaryDark"
+                    android:src="@drawable/ic_dark_right_arrow"
+                    android:visibility="@{stage.pending ? View.GONE : View.VISIBLE}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewStartDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_47"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_21"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:background="@color/colorPrimaryLighter"
+            android:fontFamily="@font/montserrat_regular"
+            android:paddingStart="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_9"
+            android:textSize="14sp"
+            tools:text="Prueba de aceptacion"
+            android:visibility="@{stage.isActive ? View.VISIBLE : View.GONE}"
+            app:formatterArgument="@{stage.parsedStartDate()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayaoutStage"
+            app:setFormatter="@{@string/start_date}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

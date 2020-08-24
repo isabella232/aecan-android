@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/magenta</color>
+    <color name="colorPrimaryDark">@color/magentaDark</color>
+    <color name="colorAccent">@color/lightBlue</color>
+
+    <color name="chartColor">@color/magentaChart</color>
+    <color name="colorPrimaryLighter">@color/magentaLighter</color>
+
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="backgroundTranslucent">#F2F2F2</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="whiteOpacity50">#80FFFFFF</color>
+    <color name="blackOpacity30">#4D000000</color>
+
+    <color name="red">#C62828</color>
+
+    <color name="darkGray">#4F4F4F</color>
+    <color name="lightGrayOpacity">#B34F4F4F</color>
+    <color name="lighterGray">#C8C8C8</color>
+    <color name="lightGraySemiTransparent">#CC4F4F4F</color>
+
+    <color name="lightBlue">#229CD8</color>
+    <color name="magenta">#F7296E</color>
+    <color name="magentaDark">#7D0F34</color>
+    <color name="magentaChart">#934E64</color>
+    <color name="magentaLighter">#F2CCD9</color>
+
+
+    <color name="greenDark">#106A39</color>
+    <color name="greenChart">#4C8F6A</color>
+    <color name="greenButton">#76B943</color>
+    <color name="greenLight">#6DAC44</color>
+    <color name="greenLighter">#D9F0CB</color>
+
+    <color name="dark_grey">#4F4F4F</color>
+    <color name="lightBluePressed">#125C79</color>
+    <color name="lineGray">#808080</color>
+    <color name="lightGray888888">#888888</color>
+    <color name="lightGrayBDBDBD">#BDBDBD</color>
+    <color name="lightGrayA6A6A6">#A6A6A6</color>
+    <color name="lightGray_modal">#BDBDBD</color>
+    <color name="lightGrayE0E0E0">#E0E0E0</color>
+
+
+    <color name="lineGrayStage">#C8C8C8</color>
+
+
+</resources>

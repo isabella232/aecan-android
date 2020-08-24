@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="monserratMedium" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="monserratMedium.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="monserratMedium.18.Blue">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="monserratSemiBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+
+    <style name="monserratLight" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+    </style>
+
+    <style name="monserratRegular" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="monserratRegular.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="monserratRegular.12.lightGreen">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="monserratRegular.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="monserratRegular.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="monserratRegular.14.lightGray">
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+    <style name="monserratRegular.16.PrimaryColor">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="monserratRegular.16.PrimaryDarkColor">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="monserratRegular.14.darkGray">
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="monserratRegular.14.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="monserratRegular.12.lightGray">
+        <item name="android:textColor">@color/lightGrayE0E0E0</item>
+    </style>
+
+    <style name="monserratRegular.12.darkGray">
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="monserratRegular.16.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="monserratRegular.14.PrimaryDarkColor">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="monserratRegular.16.lightGray">
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="monserratRegular.16.lightGray8888">
+        <item name="android:textColor">@color/lightGray888888</item>
+    </style>
+
+    <style name="monserratBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="monserratBold.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="monserratBold.13">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="monserratBold.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="monserratBold.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="monserratBold.36">
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="monserratBold.36.LightGray">
+        <item name="android:textColor">@color/lightGrayBDBDBD</item>
+    </style>
+
+    <style name="monserratBold.18.PrimaryDarkColor">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="monserratBold.18.ChartColor">
+        <item name="android:textColor">@color/chartColor</item>
+    </style>
+
+    <style name="monserratBold.18.PrimaryColor">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="monserratBold.18.Blue">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="monserratBold.21">
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="monserratBold.21.primaryColor">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="monserratBold.14.Gray">
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="monserratBold.12.Gray">
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="monserratBold.14.Blue">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="monserratRegular.12.PrimaryDarkButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_primary_dark_pressed</item>
+        <item name="android:paddingLeft">9dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingRight">9dp</item>
+    </style>
+
+    <style name="monserratRegular.16.PrimaryDarkButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_primary_dark_pressed</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
+
+
+</resources>

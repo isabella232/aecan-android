@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="registerActivityViewModel"
+            type="com.aeternity.aecan.viewModels.RegisterActivityViewModel" />
+
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:layout_gravity="bottom"
+            android:contentDescription="splash bottom image"
+            android:scaleType="fitXY"
+            android:src="@drawable/splash_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingTop="59dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/monserratRegular.18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/register_text" />
+
+
+                <ImageView
+                    android:id="@+id/logoAECan"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="@dimen/margin_76"
+                    android:contentDescription="splash AECan logo"
+                    android:focusable="true"
+                    android:focusedByDefault="true"
+                    android:layout_marginEnd="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:scaleType="centerCrop"
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/logo_aeternity"
+                    android:transitionName="imageLogo" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textEmailLayout"
+                    style="@style/editTextLayout"
+                    android:layout_marginTop="@dimen/margin_50"
+                    android:hint="@string/name"
+                    app:startIconDrawable="@drawable/ic_user"
+                    app:startIconTint="@color/colorAccent">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextName"
+                        style="@style/editTextInput"
+                        android:inputType="textCapSentences"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/editTextLayout"
+                    android:layout_marginStart="@dimen/margin_37"
+                    android:layout_marginEnd="@dimen/margin_37"
+                    android:hint="@string/lastname"
+                    app:startIconDrawable="@drawable/ic_user"
+                    app:startIconTint="@color/lightBlue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextLastName"
+                        style="@style/editTextInput"
+                        android:inputType="textCapSentences"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/editTextLayout"
+                    android:layout_marginStart="@dimen/margin_37"
+                    android:layout_marginEnd="@dimen/margin_37"
+                    android:hint="@string/email"
+                    app:startIconDrawable="@drawable/ic_mail"
+                    app:startIconTint="@color/lightBlue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextEmail"
+                        style="@style/editTextInput"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/editTextLayout"
+                    android:layout_marginStart="@dimen/margin_37"
+                    android:layout_marginEnd="@dimen/margin_37"
+                    android:hint="@string/phone"
+                    app:startIconDrawable="@drawable/ic_phone"
+                    app:startIconTint="@color/lightBlue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextPhone"
+                        style="@style/editTextInput"
+                        android:inputType="phone"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/editTextLayout"
+                    android:layout_marginStart="@dimen/margin_37"
+                    android:layout_marginEnd="@dimen/margin_37"
+                    android:hint="@string/password"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/lightBlue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextPassword"
+                        style="@style/editTextInput"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    style="@style/buttonRounded.Blue"
+                    android:layout_marginTop="@dimen/margin_28"
+                    android:onClick="@{()->registerActivityViewModel.onRegisterButtonPressed()}"
+                    android:text="@string/register" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+</layout>
+

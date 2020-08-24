@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fullContainer"
+        tools:context="com.aeternity.aecan.views.base.ToolbarActivity">
+
+        <FrameLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/statusBar">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/monserratRegular.18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_15"
+                tools:text="@string/email" />
+
+            <TextView
+                android:id="@+id/toolbarButtonLogout"
+                android:visibility="gone"
+                style="@style/monserratMedium.18.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/logout_button"
+                android:layout_margin="@dimen/margin_15" />
+
+            <ImageView
+                android:id="@+id/toolbarArrowBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/toolbar_back_arrow" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/activityContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

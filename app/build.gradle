@@ -1,0 +1,186 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        def formattedDate = new Date().format('(yyyy-MM-dd-HH-mm-ss)')
+        outputFileName = "${applicationId}_${variant.name}-${variant.versionName}-${formattedDate}.apk"
+    }
+}
+
+android {
+
+    signingConfigs {
+        dev {
+            storeFile file('../keystores/keystore-dev')
+            keyAlias = 'uruguaycandev'
+            storePassword 'urucandev'
+            keyPassword 'urucandev'
+        }
+
+        production {
+            storeFile file('../keystores/keystore')
+            keyAlias = 'uruguaycan'
+            storePassword 'urucan'
+            keyPassword 'urucan'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.aeternity.aecan"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 10
+        versionName "2.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+
+        userDev {
+            applicationIdSuffix ".usuario.dev"
+            resValue 'string', 'app_name', 'AECan DEV'
+            buildConfigField 'String', 'app_mode', "\"final\""
+            buildConfigField 'String', 'BASE_URL', "\"https://dev.aecan.vortexsoftware.com.ar/api/v1/\""
+            manifestPlaceholders = [
+                    appIcon: "@drawable/ic_aecan_lab"
+            ]
+            signingConfig signingConfigs.dev
+            minifyEnabled false
+            debuggable true
+        }
+
+        userStaging {
+            applicationIdSuffix ".usuario.staging"
+            resValue 'string', 'app_name', 'AECan'
+            buildConfigField 'String', 'app_mode', "\"final\""
+            buildConfigField 'String', 'BASE_URL', "\"http://aecan.inmindsoftware.com/api/v1/\""
+            manifestPlaceholders = [
+                    appIcon: "@drawable/ic_aecan_lab"
+            ]
+            signingConfig signingConfigs.dev
+            minifyEnabled false
+            debuggable true
+        }
+
+        userProduction {
+            applicationIdSuffix ".usuario.production"
+            resValue 'string', 'app_name', 'AECan'
+            buildConfigField 'String', 'app_mode', "\"final\""
+            buildConfigField 'String', 'BASE_URL', "\"https://dev.aecan.vortexsoftware.com.ar/api/v1/\""
+            manifestPlaceholders = [
+                    appIcon: "@drawable/ic_aecan_lab"
+            ]
+            signingConfig signingConfigs.production
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        operatorDev {
+            applicationIdSuffix ".operario.dev"
+            resValue 'string', 'app_name', 'AECan DEV'
+            buildConfigField 'String', 'app_mode', "\"operator\""
+            buildConfigField 'String', 'BASE_URL', "\"https://dev.aecan.vortexsoftware.com.ar/api/v1/\""
+            manifestPlaceholders = [
+                    appIcon: "@drawable/ic_aecan_operario"
+            ]
+            signingConfig signingConfigs.dev
+            minifyEnabled false
+            debuggable true
+        }
+
+        operatorStaging {
+            applicationIdSuffix ".operario.staging"
+            resValue 'string', 'app_name', 'AECan'
+            buildConfigField 'String', 'app_mode', "\"operator\""
+            buildConfigField 'String', 'BASE_URL', "\"http://aecan.inmindsoftware.com/api/v1/\""
+            manifestPlaceholders = [
+                    appIcon: "@drawable/ic_aecan_operario"
+            ]
+            signingConfig signingConfigs.dev
+            minifyEnabled false
+            debuggable true
+        }
+
+        operatorProduction {
+            applicationIdSuffix ".operario.production"
+            resValue 'string', 'app_name', 'AECan'
+            buildConfigField 'String', 'app_mode', "\"operator\""
+            buildConfigField 'String', 'BASE_URL', "\"https://dev.aecan.vortexsoftware.com.ar/api/v1/\""
+            manifestPlaceholders = [
+                    appIcon: "@drawable/ic_aecan_operario"
+            ]
+            signingConfig signingConfigs.production
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-ml-vision:21.0.0' //FOR QR DETECTION
+
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0-beta02'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+
+
+    //GLIDE
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.android.material:material:1.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //ANDROID RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //NETWORKING
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.0'
+
+    //STORAGE
+    implementation 'io.paperdb:paperdb:2.6'
+
+    //to make charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //DATE PORT FOR APIS BELOW 26
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+
+
+}

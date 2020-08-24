@@ -1,0 +1,123 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.aeternity.aecan.viewModels.StageDetailModalViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.aeternity.aecan.views.modal.DoubleButtonModalFragment">
+
+        <FrameLayout
+            android:id="@+id/frameLayoutModal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blackOpacity30"
+            android:clickable="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewEndStage"
+                style="@style/monserratBold.18.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:text="@string/end_stage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewAlert"
+                style="@style/textView16MonserratLightGrey"
+                greenText="@{viewModel.greenTextArray}"
+                textFormatter="@{viewModel.content}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_14"
+                android:layout_marginEnd="@dimen/margin_30"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEndStage"
+                tools:text="@string/alert_end_stage2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <Button
+                android:id="@+id/buttonCancelDoubleButtonModal"
+                style="@style/buttonLightGrayModal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_45"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_19"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:onClick="@{() -> viewModel.onDismiss()}"
+                android:text="@string/cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/centerGuideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAlert"
+                app:layout_constraintWidth_max="@dimen/width_130" />
+
+            <Button
+                android:id="@+id/buttonAcceptDoubleButtonModal"
+                style="@style/buttonLightBlueModal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_45"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="@dimen/margin_19"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:onClick="@{(v)-> viewModel.onRightButtonClicked()}"
+                android:text="@string/accept"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/centerGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAlert"
+                app:layout_constraintWidth_max="@dimen/width_130" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <FrameLayout
+            android:id="@+id/networkOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightGraySemiTransparent"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:indeterminate="true" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

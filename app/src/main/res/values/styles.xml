@@ -1,0 +1,264 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
+    </style>
+
+    <style name="buttonRounded" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginLeft">28dp</item>
+        <item name="android:layout_marginRight">28dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="buttonRounded.Blue">
+        <item name="android:background">@drawable/btn_blue</item>
+    </style>
+
+    <style name="buttonRounded.Green">
+        <item name="android:background">@drawable/btn_primary</item>
+    </style>
+
+
+    <style name="textWhite18MonserratRegular">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="buttonLightBlueModal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/btn_blue</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="textView21MonserratBoldLightGreen">
+        <item name="android:textSize">21sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="buttonLightGrayModal">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/btn_modal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="greenNumberBatch">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="buttonLightGreenMonserratRegular16">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="circleStage">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:background">@drawable/stage_circle</item>
+    </style>
+
+    <style name="textViewStage">
+        <item name="android:layout_width">103dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:background">@drawable/text_view_primary_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="textViewGreen">
+        <item name="android:layout_width">126dp</item>
+        <item name="android:layout_height">39dp</item>
+        <item name="android:background">@drawable/variety_textview</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="textView14MonserratLightGrey">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="textView16MonserratLightGrey">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="textView18MonserratLightGreen">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textView18MonserratDarkGreen">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="textView18MonserratBoldDarkGreen">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+
+    <style name="textView12LightGrey">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+
+    <style name="textView12MonserratLightGrey">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+
+    <style name="textView14MonserratBoldLightGreen">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="textView14MonserratSemiBoldDarkGrey">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="textViewGreenLarge">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">39dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="primaryLightTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="primaryDarkTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="editTextLayout">
+        <item name="android:layout_width">310dp</item>
+        <item name="android:layout_height">55dp</item>
+    </style>
+
+    <style name="editTextInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:backgroundTint">@color/lightGrayE0E0E0</item>
+        <item name="android:textColor">@color/darkGray</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="accentTab" parent="Widget.Design.TabLayout">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabTextColor">@color/lighterGray</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+    </style>
+
+    <style name="monserratRegular.18">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="monserratRegularBold18">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textViewLightBlue18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/lightBlue</item>
+    </style>
+
+    <style name="textViewCircleLightBlue8">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/circle_blue_text</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="toggleButtonList" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="component_card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginTop">11dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginBottom">11dp</item>
+        <item name="android:baselineAligned">false</item>
+        <item name="android:elevation">5dp</item>
+    </style>
+
+
+</resources>

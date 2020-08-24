@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="optionName"
+            type="com.aeternity.aecan.models.Item" />
+
+    </data>
+
+    <TextView
+        android:id="@+id/stopStatusTxt"
+        style="@style/monserratRegular.14.White"
+        setBackgroundDrawable="@{optionName.isSelected() ? @drawable/btn_primary_color_normal : @drawable/btn_gray_light}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="3dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="3dp"
+        android:text="@{optionName.text}"
+        tools:text="1 Semana" />
+
+</layout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isLastValueEditItem"
+            type="boolean" />
+
+        <variable
+            name="valueEditItem"
+            type="com.aeternity.aecan.models.dynamic.DynamicItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textItem"
+            style="@style/monserratRegular.16"
+            formatterFirstArgument="@{valueEditItem.name}"
+            formatterSecondArgument="@{valueEditItem.value}"
+            setFormatterTwoArgs="@{@string/keyValueFormatter}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="18dp"
+            android:text="@string/keyValueFormatter"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/keyValueFormatter" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/lightGrayE0E0E0"
+            android:visibility="@{isLastValueEditItem ? View.GONE : View.VISIBLE }"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textItem" />
+
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginRight="20dp"
+            android:contentDescription="@string/description_button"
+            android:scaleType="fitXY"
+            android:visibility="@{valueEditItem.editable ? View.VISIBLE : View.GONE}"
+            android:src="@drawable/ic_chevron_right"
+            android:tint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="@+id/textItem"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textItem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="newLotViewModel"
+            type="com.aeternity.aecan.viewModels.NewLotViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/padding_22"
+        android:paddingEnd="@dimen/padding_22">
+
+        <FrameLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundTranslucent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/size_116"
+                android:layout_height="@dimen/size_87"
+                android:layout_gravity="end|bottom"
+                android:layout_marginRight="@dimen/margin_15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/constrainLayoutBeaconsNewBatch"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:onClick="@{()->newLotViewModel.onBatchNumberPressed()}"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textViewNumberBatch"
+                        style="@style/monserratRegular.14.darkGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:text="@string/number_lot"
+                        android:textColor="@color/darkGray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewEnterNumber"
+                        style="@style/monserratBold.18.PrimaryColor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_12"
+                        android:hint="@string/hashtag"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorPrimary"
+                        app:formatterArgument="@{newLotViewModel.identifier}"
+                        app:layout_constraintEnd_toEndOf="@+id/view3"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNumberBatch"
+                        app:setFormatter="@{@string/id_with_prefix}" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="95dp"
+                        android:layout_height="@dimen/size_1"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@color/lineGray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewEnterNumber" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/relativeLayoutParent"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_18"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:layout_weight="0.7">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constrainLayoutBeaconsNewBatch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->newLotViewModel.onBatchBeaconsPressed()}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <FrameLayout
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imageViewBeacons"
+                                android:layout_width="@dimen/size_11"
+                                android:layout_height="@dimen/size_11"
+                                android:layout_gravity="end|center_vertical"
+                                android:layout_marginStart="@dimen/margin_15"
+                                android:layout_marginEnd="@dimen/margin_7"
+                                android:layout_marginBottom="@dimen/margin_2"
+                                android:tint="@color/colorPrimaryDark"
+                                android:src="@drawable/ic_underarrow"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/monserratRegular.12.darkGray"
+                                android:layout_width="42dp"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                app:layout_constraintEnd_toStartOf="@+id/imageViewBeacons"
+                                app:showListSize="@{newLotViewModel.selectedBeaconsIndex}"
+                                tools:text="3" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size_1"
+                                android:layout_gravity="bottom|end"
+                                android:layout_marginStart="-8dp"
+                                android:layout_marginTop="@dimen/margin_20"
+                                android:background="@color/lineGray" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/textViewBeacons"
+                            style="@style/monserratRegular.14.darkGray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_5"
+                            android:text="@string/items"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/relativeLayoutVariedadNewBatch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:onClick="@{()->newLotViewModel.onBatchVarietyPressed()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constrainLayoutBeaconsNewBatch">
+
+                        <TextView
+                            android:id="@+id/textViewVatietyNewBatch"
+                            style="@style/monserratRegular.14.darkGray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/variety"
+                            android:textSize="@dimen/size_14"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <FrameLayout
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_11"
+                                android:layout_height="@dimen/size_11"
+                                android:layout_gravity="end|center_vertical"
+                                android:layout_marginStart="@dimen/margin_15"
+                                android:tint="@color/colorPrimaryDark"
+                                android:layout_marginEnd="@dimen/margin_7"
+                                android:layout_marginBottom="@dimen/margin_2"
+                                android:src="@drawable/ic_underarrow"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                style="@style/monserratRegular.12.darkGray"
+                                android:layout_width="43dp"
+                                android:layout_height="wrap_content"
+                                android:text="@={newLotViewModel.varietyName}"
+                                android:textAlignment="center"
+                                app:layout_constraintEnd_toStartOf="@+id/imageViewBeacons"
+                                tools:text="aas" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size_1"
+                                android:layout_gravity="bottom|end"
+                                android:layout_marginStart="-8dp"
+                                android:layout_marginTop="@dimen/margin_20"
+                                android:background="@color/lineGray" />
+
+                        </FrameLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textViewInformation"
+            style="@style/monserratBold.18.PrimaryDarkColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_14"
+            android:text="@string/information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <FrameLayout
+            android:id="@+id/informationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_14"
+            android:paddingBottom="@dimen/padding_40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformation" />
+
+        <Button
+            style="@style/buttonRounded.Blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_38"
+            android:onClick="@{()->newLotViewModel.onSaveButtonPressed()}"
+            android:paddingStart="@dimen/margin_40"
+            android:paddingEnd="@dimen/margin_40"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
